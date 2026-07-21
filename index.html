@@ -389,7 +389,7 @@
 
 
         /* =====================================================
-           منطقة الطباعة (المربع الموحد)
+           منطقة الطباعة (المربع الموحد - تصميم مضغوط جداً)
         ===================================================== */
 
         #printableArea {
@@ -400,9 +400,9 @@
 
             width: 100%;
 
-            min-height: 400px;
+            min-height: 250px;
 
-            padding: 30px;
+            padding: 15px;
 
             border-radius: 12px;
 
@@ -410,34 +410,34 @@
 
         }
 
-        /* ضبط حجم الخط 12px مع الهوامش الرسمية المتناسقة */
+        /* المربع الموحد: خط 10px وفراغات ممتازة ومضغوطة */
         .print-box {
 
-            width: 320px;
+            width: 220px;
 
             max-width: 100%;
 
             margin: 0 auto;
 
-            padding: 16px 20px;
+            padding: 8px 12px;
 
             border: 1px solid #d8d8d8;
 
-            border-top: 3px solid var(--gold);
+            border-top: 2px solid var(--gold);
 
-            border-radius: 8px;
+            border-radius: 6px;
 
             background: #fafafa;
 
             text-align: right;
 
-            font-size: 12px; /* ضبط حجم الخط إلى 12px */
+            font-size: 10px; /* تصغير الخط لـ 10px */
 
-            line-height: 1.6;
+            line-height: 1.1; /* تقليل ارتفاع السطر وتقريب الكلمات */
 
         }
 
-        /* خطوط فاصلة منقطة أنيقة بين الصفوف */
+        /* تقليل الحواف والمسافات الفاصلة بين الصفوف */
         .print-row {
 
             display: flex;
@@ -446,11 +446,11 @@
 
             align-items: center;
 
-            margin-bottom: 8px;
+            margin-bottom: 4px;
 
-            padding-bottom: 6px;
+            padding-bottom: 3px;
 
-            border-bottom: 1px dotted #b0b0b0; /* خط فاصل منقط أنيق */
+            border-bottom: 1px dotted #cccccc;
 
         }
 
@@ -470,7 +470,7 @@
 
             color: #444;
 
-            font-size: 12px;
+            font-size: 10px;
 
         }
 
@@ -480,38 +480,38 @@
 
             color: var(--primary-color);
 
-            font-size: 12px;
+            font-size: 10px;
 
         }
 
-        /* منطقة التوقيع داخل المربع بخطوط منقطة */
+        /* تقليل ارتفاع قسم التوقيع وتقريب المسافة */
         .signature-area {
 
-            margin-top: 12px;
+            margin-top: 6px;
 
-            padding-top: 8px;
+            padding-top: 4px;
 
-            border-top: 1px dotted #b0b0b0; /* خط منقط أعلى قسم التوقيع */
+            border-top: 1px dotted #cccccc;
 
         }
 
         .signature-title {
 
-            font-size: 12px;
+            font-size: 10px;
 
             font-weight: 700;
 
             color: #333;
 
-            margin-bottom: 20px;
+            margin-bottom: 10px; /* تقليل المسافة المفروضة للتوقيع */
 
         }
 
         .signature-line {
 
-            width: 80%;
+            width: 85%;
 
-            border-bottom: 1px dotted #555; /* خط توقيع منقط */
+            border-bottom: 1px dotted #666;
 
             margin: auto;
 
@@ -597,9 +597,9 @@
 
             #printableArea {
 
-                padding: 15px;
+                padding: 10px;
 
-                min-height: 350px;
+                min-height: 200px;
 
             }
 
@@ -613,7 +613,7 @@
 
 
         /* =====================================================
-           إعدادات الطباعة - هوامش صفرية للجوال مع تثبيت الخط 12px
+           إعدادات الطباعة - هوامش صفرية وضغط أقصى للمربع
         ===================================================== */
 
         @media print {
@@ -677,27 +677,29 @@
             }
 
 
-            /* المربع الموحد بحجم خط 12px وحدود منقطة أسفل الورقة */
+            /* المربع الموحد مضغوط جداً بحجم 200px وبخط 10px */
 
             .print-box {
 
                 position: absolute !important;
 
-                bottom: 15mm !important;
+                bottom: 10mm !important;
 
                 left: 50% !important;
 
                 transform: translateX(-50%) !important;
 
-                width: 290px !important;
+                width: 200px !important;
 
-                padding: 14px 16px !important;
+                padding: 6px 10px !important;
 
-                font-size: 12px !important; /* التأكيد على حجم الخط 12px للطباعة */
+                font-size: 10px !important;
 
-                border: 1px solid #ccc !important;
+                line-height: 1.1 !important;
 
-                border-top: 3px solid var(--gold) !important;
+                border: 1px solid #bbb !important;
+
+                border-top: 2px solid var(--gold) !important;
 
                 background: #ffffff !important;
 
@@ -707,35 +709,35 @@
 
             .print-row {
 
-                margin-bottom: 8px !important;
+                margin-bottom: 4px !important;
 
-                padding-bottom: 6px !important;
+                padding-bottom: 3px !important;
 
-                border-bottom: 1px dotted #b0b0b0 !important; /* حدود منقطة في الطباعة */
+                border-bottom: 1px dotted #bbbbbb !important;
 
             }
 
             .print-label, .print-val {
 
-                font-size: 12px !important;
+                font-size: 10px !important;
 
             }
 
             .signature-area {
 
-                margin-top: 10px !important;
+                margin-top: 5px !important;
 
-                padding-top: 8px !important;
+                padding-top: 4px !important;
 
-                border-top: 1px dotted #b0b0b0 !important;
+                border-top: 1px dotted #bbbbbb !important;
 
             }
 
             .signature-title {
 
-                font-size: 12px !important;
+                font-size: 10px !important;
 
-                margin-bottom: 18px !important;
+                margin-bottom: 10px !important;
 
             }
 
