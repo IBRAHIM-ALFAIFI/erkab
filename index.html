@@ -389,7 +389,7 @@
 
 
         /* =====================================================
-           منطقة الطباعة (المربع المصغر)
+           منطقة الطباعة (المربع الموحد)
         ===================================================== */
 
         #printableArea {
@@ -400,9 +400,9 @@
 
             width: 100%;
 
-            min-height: 200px;
+            min-height: 400px;
 
-            padding: 15px;
+            padding: 30px;
 
             border-radius: 12px;
 
@@ -410,33 +410,34 @@
 
         }
 
-        /* المربع المصغر جداً للعرض على الشاشة */
+        /* ضبط حجم الخط 12px مع الهوامش الرسمية المتناسقة */
         .print-box {
 
-            width: 220px;
+            width: 320px;
 
             max-width: 100%;
 
             margin: 0 auto;
 
-            padding: 6px 10px;
+            padding: 16px 20px;
 
             border: 1px solid #d8d8d8;
 
-            border-top: 2px solid var(--gold);
+            border-top: 3px solid var(--gold);
 
-            border-radius: 5px;
+            border-radius: 8px;
 
             background: #fafafa;
 
             text-align: right;
 
-            font-size: 10px;
+            font-size: 12px; /* ضبط حجم الخط إلى 12px */
 
-            line-height: 1.1;
+            line-height: 1.6;
 
         }
 
+        /* خطوط فاصلة منقطة أنيقة بين الصفوف */
         .print-row {
 
             display: flex;
@@ -445,15 +446,15 @@
 
             align-items: center;
 
-            margin-bottom: 3px;
+            margin-bottom: 8px;
 
-            padding-bottom: 2px;
+            padding-bottom: 6px;
 
-            border-bottom: 1px dashed #eee;
+            border-bottom: 1px dotted #b0b0b0; /* خط فاصل منقط أنيق */
 
         }
 
-        .print-row:last-of-type {
+        .print-row:last-child {
 
             border-bottom: none;
 
@@ -469,6 +470,8 @@
 
             color: #444;
 
+            font-size: 12px;
+
         }
 
         .print-val {
@@ -477,36 +480,38 @@
 
             color: var(--primary-color);
 
+            font-size: 12px;
+
         }
 
-        /* منطقة التوقيع المصغرة جداً */
+        /* منطقة التوقيع داخل المربع بخطوط منقطة */
         .signature-area {
 
-            margin-top: 4px;
+            margin-top: 12px;
 
-            padding-top: 3px;
+            padding-top: 8px;
 
-            border-top: 1px solid #e2e2e2;
+            border-top: 1px dotted #b0b0b0; /* خط منقط أعلى قسم التوقيع */
 
         }
 
         .signature-title {
 
-            font-size: 9.5px;
+            font-size: 12px;
 
             font-weight: 700;
 
             color: #333;
 
-            margin-bottom: 8px;
+            margin-bottom: 20px;
 
         }
 
         .signature-line {
 
-            width: 70%;
+            width: 80%;
 
-            border-bottom: 1px dashed #777;
+            border-bottom: 1px dotted #555; /* خط توقيع منقط */
 
             margin: auto;
 
@@ -592,9 +597,9 @@
 
             #printableArea {
 
-                padding: 10px;
+                padding: 15px;
 
-                min-height: 150px;
+                min-height: 350px;
 
             }
 
@@ -608,24 +613,35 @@
 
 
         /* =====================================================
-           إعدادات الطباعة الدقيقة (أسفل الصفحة تماماً)
+           إعدادات الطباعة - هوامش صفرية للجوال مع تثبيت الخط 12px
         ===================================================== */
 
         @media print {
 
+            @page {
 
-            body {
+                size: A4;
 
-                background: white;
+                margin: 0 !important; /* هوامش الصفحة صفر */
 
-                padding: 0;
+            }
 
-                margin: 0;
+            html, body {
+
+                background: white !important;
+
+                padding: 0 !important;
+
+                margin: 0 !important;
+
+                width: 100% !important;
+
+                height: 100% !important;
 
             }
 
 
-            /* إخفاء العناصر غير الخاصة بالطباعة */
+            /* إخفاء كل العناصر غير الخاصة بالطباعة */
 
             .no-print {
 
@@ -634,87 +650,98 @@
             }
 
 
-            /* ورقة الطباعة الكاملة */
+            /* ورقة الطباعة */
 
             #printableArea {
 
                 display: block !important;
 
-                width: 100%;
+                width: 100% !important;
 
-                height: 100vh;
+                height: 100vh !important;
 
-                border: none;
+                min-height: 100vh !important;
 
-                box-shadow: none;
+                border: none !important;
 
-                border-radius: 0;
+                box-shadow: none !important;
 
-                padding: 0;
+                border-radius: 0 !important;
 
-                position: relative;
+                padding: 0 !important;
+
+                margin: 0 !important;
+
+                position: relative !important;
 
             }
 
 
-            /* المربع في أسفل الصفحة تماماً وبحجم مصغر خطاً وأبعاداً */
+            /* المربع الموحد بحجم خط 12px وحدود منقطة أسفل الورقة */
 
             .print-box {
 
-                position: absolute;
+                position: absolute !important;
 
-                bottom: 2mm; /* ملاصق لأسفل الهامش */
+                bottom: 15mm !important;
 
-                left: 50%;
+                left: 50% !important;
 
-                transform: translateX(-50%);
+                transform: translateX(-50%) !important;
 
-                width: 210px; /* عرض المربع أصغر */
+                width: 290px !important;
 
-                padding: 5px 8px;
+                padding: 14px 16px !important;
 
-                font-size: 9.5px; /* خط أصغر */
+                font-size: 12px !important; /* التأكيد على حجم الخط 12px للطباعة */
 
-                line-height: 1.1;
+                border: 1px solid #ccc !important;
 
-                border: 1px solid #aaa;
+                border-top: 3px solid var(--gold) !important;
 
-                border-top: 2px solid var(--gold);
+                background: #ffffff !important;
 
-                background: #ffffff;
+                box-sizing: border-box !important;
 
             }
 
             .print-row {
 
-                margin-bottom: 2px;
+                margin-bottom: 8px !important;
 
-                padding-bottom: 2px;
+                padding-bottom: 6px !important;
+
+                border-bottom: 1px dotted #b0b0b0 !important; /* حدود منقطة في الطباعة */
+
+            }
+
+            .print-label, .print-val {
+
+                font-size: 12px !important;
 
             }
 
             .signature-area {
 
-                margin-top: 3px;
+                margin-top: 10px !important;
 
-                padding-top: 2px;
+                padding-top: 8px !important;
+
+                border-top: 1px dotted #b0b0b0 !important;
 
             }
 
             .signature-title {
 
-                font-size: 9px;
+                font-size: 12px !important;
 
-                margin-bottom: 8px;
+                margin-bottom: 18px !important;
 
             }
 
+            .signature-line {
 
-            @page {
-
-                size: A4;
-
-                margin: 5mm; /* تقليل الهوامش الخارجية للصفحة لتتيح الطباعة في أسفلها تماماً */
+                border-bottom: 1px dotted #555 !important;
 
             }
 
@@ -910,7 +937,7 @@
 
 
     <!-- =====================================================
-         منطقة الطباعة (المربع المصغر جداً)
+         منطقة الطباعة (المربع الموحد الذي يحتوي جميع البيانات)
     ====================================================== -->
 
 
